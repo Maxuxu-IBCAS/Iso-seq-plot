@@ -1,0 +1,3 @@
+perl -e 'while(<>){chomp;@aa=split;$hash{$aa[0]}=$_}open FILE,"gene.txt";while(<FILE>){chomp;@aa=split;print "$hash{$aa[0]}\n" if(exists $hash{$aa[0]})}' /mnt/maxuxu/zhanglab_data/01_anther_ssRNA-seq_data/01_alignment_to_B73_V4_hasit2/ssRNA-seq-gene-expression-B74-V4.replication_combined >lncRNA.OCR.intergenic.gene.expression
+awk '{print $1"\t"$2"\t"$3"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$11}' lncRNA.OCR.intergenic.gene.expression >lncRNA.OCR.intergenic.gene.expression.used
+perl /mnt/maxuxu/data/anther_pacbio_han/version_five/05_lncRNA_NEW/02_expression/step5_convert_format_based_on_normalization_largest_fpkm.pl lncRNA.OCR.intergenic.gene.expression.used >lncRNA.OCR.intergenic.gene.expression.used.normalizated
